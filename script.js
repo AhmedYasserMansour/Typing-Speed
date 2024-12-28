@@ -129,7 +129,7 @@ const normalWords = [
        else if (e.target.classList.contains('my-words')) {
         if(window.localStorage.getItem('seconds')) {
             seconds.innerHTML = JSON.parse(window.localStorage.getItem('seconds'));
-            timeLeft = JSON.parse(window.localStorage.getItem('seconds'))
+            timeLeft = JSON.parse(window.localStorage.getItem('seconds'));
         }
         writeSeconds.style.display = 'none';
         inputWords.style.width = '100%';
@@ -142,6 +142,7 @@ const normalWords = [
             AllWords = [...JSON.parse(window.localStorage.getItem('words'))];
             words.innerHTML = '';  
             nunbers.innerHTML = AllWords.length;
+            deleteAll.style.display = 'block';
           }
                 start.style.display = 'block';
                 inputWords.placeholder = 'Press Start';
@@ -161,6 +162,7 @@ const normalWords = [
             inputWords.placeholder = 'Press Start';
             start.style.display = 'block';
             inputWords.style.pointerEvents= 'none';
+            lvlSeconds.style.display = 'block';
             writeSeconds.style.display = 'none';
             inputWords.style.width = '100%';
             normal.style.display = 'none';
@@ -249,6 +251,7 @@ function remove() {
     myWords.style.display = 'none';
     start.style.display = 'none';
     word.style.display = 'none';
+    lvlSeconds.style.display = 'none';
 }
 
 function deleteWord() {
