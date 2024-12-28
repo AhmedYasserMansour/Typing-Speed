@@ -74,15 +74,16 @@ const normalWords = [
  if(window.localStorage.getItem('words') && JSON.parse(window.localStorage.getItem('words')).length > 0) {
     myWords.style.display = 'block';
   }
+  let w = false;
  start.addEventListener('click', ()=> { 
-    inputWords.placeholder = 'Write The Word';
+    w = false;
      startPlay();
+    inputWords.placeholder = 'Write The Word';
     inputWords.style.pointerEvents= 'normal';
     start.style.display = 'none';
- })
+ });
  let checkStart = false;
  let check = false;
- let w = false;
     controls.addEventListener('click', e =>{
             if(e.target.classList.contains('add')){
                 lvlSeconds.innerHTML = 'Add Your Words'
