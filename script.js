@@ -74,10 +74,7 @@ const normalWords = [
  if(window.localStorage.getItem('words') && JSON.parse(window.localStorage.getItem('words')).length > 0) {
     myWords.style.display = 'block';
   }
- start.addEventListener('click', ()=> {
-    (document.querySelectorAll('.words div .delete')).forEach(word=>{
-        word.style.display = 'none'
-    });  
+ start.addEventListener('click', ()=> { 
     inputWords.placeholder = 'Write The Word';
      startPlay();
     inputWords.style.pointerEvents= 'normal';
@@ -85,6 +82,7 @@ const normalWords = [
  })
  let checkStart = false;
  let check = false;
+ let w = false;
     controls.addEventListener('click', e =>{
             if(e.target.classList.contains('add')){
                 lvlSeconds.innerHTML = 'Add Your Words'
@@ -127,6 +125,7 @@ const normalWords = [
                 generateWords();
             }
        else if (e.target.classList.contains('my-words')) {
+        w = true
         if(window.localStorage.getItem('seconds')) {
             seconds.innerHTML = JSON.parse(window.localStorage.getItem('seconds'));
             timeLeft = JSON.parse(window.localStorage.getItem('seconds'));
@@ -150,9 +149,6 @@ const normalWords = [
                 myWords.style.display = 'none';
                 normal.style.display = 'none';
                 generateWords();
-                (document.querySelectorAll('.words div .delete')).forEach(word=>{
-                    word.style.display = 'block'
-                }); 
         }
         if(e.target.classList.contains('normal')) {
             check = false;
@@ -174,9 +170,6 @@ const normalWords = [
             AllWords = [...normalWords]
             nunbers.innerHTML = AllWords.length;
             generateWords();
-            (document.querySelectorAll('.words div .delete')).forEach(word=>{
-                word.style.display = 'none'
-            }); 
         }
       });
       
@@ -197,12 +190,16 @@ function generateWords() {
         let div = document.createElement('div');
         div.innerHTML = AllWords[i];
         let span = document.createElement('span');
+        if(w) {
+            span.style.display = 'block';
+        }
         span.innerHTML = 'x'
         span.className = 'delete'
         span.title = 'delete The Word'
         div.appendChild(span)
         words.appendChild(div)
     }
+    
     if(check) {
         startPlay();
     }
@@ -220,7 +217,8 @@ function generateWords() {
                 score.innerHTML++
             }
             if(AllWords.length > 0) {
-                generateWords(AllWords);
+                generateWords();
+                
             } else {
                 if(score.innerHTML === nunbers.innerHTML) {
                     word.innerHTML = 'Good';
@@ -235,7 +233,6 @@ function generateWords() {
             }
           }
         },1000);
-    
  }
 function addLocal(AllWords) {
     window.localStorage.setItem('words', JSON.stringify(AllWords));
@@ -265,6 +262,7 @@ function deleteWord() {
             AllWords.forEach((word) => {
                 let div = document.createElement('div');
                 let span = document.createElement('span');
+                span.style.display = 'block';
                 span.innerHTML = 'x';
                 span.className = 'delete';
                 div.textContent = word;
