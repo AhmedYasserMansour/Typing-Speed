@@ -3,7 +3,7 @@ body {
     text-align: center;
     margin: 0;
 }
-.game {
+.game .container {
     width: 700px;
     margin: auto;
 }
@@ -138,11 +138,14 @@ body {
 }
 
 @media (max-width:767px) {
-    .game {
-        width: 100%;
-    }
     body{
         font-size: 16px;
+    }
+    .game .container {
+        width: 95%;
+    }
+    .controls {
+        flex-wrap: wrap;
     }
     .inputs {
         width: 95%;

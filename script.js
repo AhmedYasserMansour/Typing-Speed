@@ -75,6 +75,9 @@ const normalWords = [
     myWords.style.display = 'block';
   }
  start.addEventListener('click', ()=> {
+    (document.querySelectorAll('.words div .delete')).forEach(word=>{
+        word.style.display = 'none'
+    });  
     inputWords.placeholder = 'Write The Word';
      startPlay();
     inputWords.style.pointerEvents= 'normal';
@@ -86,6 +89,7 @@ const normalWords = [
             if(e.target.classList.contains('add')){
                 lvlSeconds.innerHTML = 'Add Your Words'
                 word.style.display = 'none';
+                myWords.style.display = 'none';
                 writeSeconds.style.display = 'block';
                 inputWords.placeholder = 'Add Your Words';
                 if(checkStart) {
@@ -121,9 +125,6 @@ const normalWords = [
                 });
                 normal.style.display = 'none';
                 generateWords();
-                // (document.querySelectorAll('.words div .delete')).forEach(word=>{
-                //     word.style.display = 'none'
-                // }); 
             }
        else if (e.target.classList.contains('my-words')) {
         if(window.localStorage.getItem('seconds')) {
@@ -172,7 +173,7 @@ const normalWords = [
             generateWords();
             (document.querySelectorAll('.words div .delete')).forEach(word=>{
                 word.style.display = 'none'
-            });  
+            }); 
         }
       });
       
