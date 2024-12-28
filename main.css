@@ -1,0 +1,157 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+.game {
+    width: 700px;
+    margin: auto;
+}
+.game .container .name{
+    background-color: #00796B;
+    padding: 10px 0;
+    margin: 0;
+    color: white;
+}
+.lvl-seconds {
+    background-color: #ddd;
+    padding: 20px 0;
+
+}
+.game .container span {
+    color: #00796B;
+    font-size: 20px;
+    font-weight: bold;
+}
+* {
+    box-sizing: border-box;
+}
+.game .container button{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background-color: #03A9F4;
+    color: white;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.game .word {
+    background-color: #eee;
+    color: #03A9F4;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 10px 0;
+    letter-spacing: 1px;
+}
+.inputs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.game .container input {
+    border: none;
+    border: 1px solid #979191;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #03A9F4;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.game .container input:focus {
+   border-color:  #00796B;
+}
+.game .container input:focus {
+    outline: none;
+}
+.game .words {
+    padding: 20px 10px;
+    display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+}
+.game .words > div {
+    position: relative;
+    padding: 6px 8px;
+    background-color: #03A9F4;
+    color: white;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.game .words > div span {
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    color: red;
+}
+.game .container .seconds-score {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 10px;
+}
+.controls {
+    display: flex;
+    gap: 10px;
+}
+.game .start {
+    margin-top: 10px;
+    display: none;
+}
+.game .my-words {
+    display: none;
+}
+.inputwords {
+    width: 100%;
+    padding: 15px;
+}
+.writeseconds {
+    display: none;
+    width: 15%;
+    padding: 0;
+}
+.writeseconds::placeholder {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@media (max-width:767px) {
+    .game {
+        width: 100%;
+    }
+    body{
+        font-size: 16px;
+    }
+    .inputs {
+        width: 95%;
+        margin:10px auto 0;
+    }
+    .inputwords::placeholder {
+        font-size: 16px;
+    }
+    .writeseconds {
+        width: 30%;
+    }
+}
