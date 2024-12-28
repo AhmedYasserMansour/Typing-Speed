@@ -168,6 +168,7 @@ const normalWords = [
             normal.style.display = 'none';
             add.style.display = 'none';
             myWords.style.display = 'none';
+            deleteAll.style.display = 'none';
             word.style.display = 'block';
             word.style.color = '#03A9F4'
             AllWords = [...normalWords]
@@ -251,6 +252,7 @@ function remove() {
     myWords.style.display = 'none';
     start.style.display = 'none';
     word.style.display = 'none';
+    deleteAll.style.display = 'none';
     lvlSeconds.style.display = 'none';
 }
 
@@ -278,7 +280,7 @@ function deleteWord() {
                 word.style.display = 'none'
                 lvlSeconds.style.display = 'none';
                 seconds.innerHTML = ' ... '
-                normal.style.display = 'block'
+                normal.style.display = 'block';
                 inputWords.placeholder = 'Press Normal';
             }
         } 
