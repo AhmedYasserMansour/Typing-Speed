@@ -75,7 +75,10 @@ const normalWords = [
     myWords.style.display = 'block';
   }
   let w = false;
- start.addEventListener('click', ()=> { 
+ start.addEventListener('click', ()=> {
+    (document.querySelectorAll('.words div .delete')).forEach(word=>{
+        word.style.display = 'none'
+    });
     w = false;
      startPlay();
     inputWords.placeholder = 'Write The Word';
